@@ -1,0 +1,334 @@
+/* ════════════════════════════════════════
+   RESET
+════════════════════════════════════════ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ════════════════════════════════════════
+   BASE
+════════════════════════════════════════ */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    color: #333;
+}
+
+/* ════════════════════════════════════════
+   HEADER & NAV
+════════════════════════════════════════ */
+header {
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    color: white;
+    font-size: 1.4rem;
+}
+
+nav {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #ffd369;
+}
+
+/* ════════════════════════════════════════
+   PAGES
+════════════════════════════════════════ */
+.page {
+    display: none;
+    padding: 30px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ════════════════════════════════════════
+   HERO
+════════════════════════════════════════ */
+.hero {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+    opacity: 0.9;
+}
+
+/* ════════════════════════════════════════
+   FEATURE BOXES (Home page)
+════════════════════════════════════════ */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.feature-box {
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.feature-box span {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.feature-box h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.feature-box p {
+    font-size: 0.88rem;
+    color: #666;
+}
+
+/* ════════════════════════════════════════
+   BUTTONS
+════════════════════════════════════════ */
+button {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    border: none;
+    color: white;
+    padding: 12px 22px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: transform 0.2s, opacity 0.2s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: scale(1.03);
+    opacity: 0.92;
+}
+
+button.btn-cancel {
+    background: #e5e7eb;
+    color: #333;
+}
+
+button.btn-danger {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+/* ════════════════════════════════════════
+   INPUTS
+════════════════════════════════════════ */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 16px;
+    margin: 8px 0;
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: white;
+}
+
+textarea {
+    border-radius: 14px;
+    resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #4facfe;
+    box-shadow: 0 0 0 3px rgba(79,172,254,0.15);
+}
+
+/* Search bar (wider, dashboard) */
+#search {
+    max-width: 460px;
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
+
+/* ════════════════════════════════════════
+   FORM BOX (login / register)
+════════════════════════════════════════ */
+.form-box {
+    background: white;
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 36px 32px;
+    border-radius: 20px;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.form-box h2 {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+}
+
+.form-sub {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.form-footer {
+    margin-top: 16px;
+    font-size: 0.88rem;
+    color: #666;
+}
+
+.form-footer a {
+    color: #4facfe;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* ════════════════════════════════════════
+   MESSAGE BOX
+════════════════════════════════════════ */
+.msg-box {
+    display: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* ════════════════════════════════════════
+   MENTOR CARDS
+════════════════════════════════════════ */
+#mentorList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    width: 230px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.09);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+}
+
+.card h4 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.skill-tag {
+    display: inline-block;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin: 2px;
+}
+
+/* ════════════════════════════════════════
+   SESSION CARDS
+════════════════════════════════════════ */
+.session-card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.session-card h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.session-card p {
+    font-size: 0.88rem;
+    color: #666;
+}
+
+.badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.badge-upcoming  { background: #dbeafe; color: #1d4ed8; }
+.badge-completed { background: #d1fae5; color: #065f46; }
+.badge-cancelled { background: #f3f4f6; color: #6b7280; }
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
+@media (max-width: 600px) {
+    .hero { padding: 50px 16px; }
+    .hero h2 { font-size: 1.5rem; }
+    .form-box { padding: 24px 18px; margin: 20px auto; }
+    .card { width: 100%; }
+    header { flex-direction: column; text-align: center; }
+}

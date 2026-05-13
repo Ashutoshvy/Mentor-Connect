@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mentor Connect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🤝 Mentor Connect</h1>
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('login')" id="nav-login">Login</a>
+        <a onclick="showPage('register')" id="nav-register">Register</a>
+        <a onclick="showPage('dashboard')" id="nav-dashboard" style="display:none">Dashboard</a>
+        <a onclick="showPage('sessions')" id="nav-sessions" style="display:none">My Sessions</a>
+        <a onclick="logout()" id="nav-logout" style="display:none; color:#ffd369;">Logout</a>
+    </nav>
+</header>
+
+<!-- ════════════════ HOME ════════════════ -->
+<div id="home" class="page active">
+    <div class="hero">
+        <h2>Connect with the Right Mentor</h2>
+        <p>Grow your skills with expert guidance</p>
+        <button onclick="showPage('register')">Get Started</button>
+    </div>
+
+    <div class="features">
+        <div class="feature-box">
+            <span>🎯</span>
+            <h3>Skill Matching</h3>
+            <p>Find mentors by the exact skill you want to learn.</p>
+        </div>
+        <div class="feature-box">
+            <span>📅</span>
+            <h3>Easy Booking</h3>
+            <p>Pick a date and time — book in seconds.</p>
+        </div>
+        <div class="feature-box">
+            <span>⭐</span>
+            <h3>Real Reviews</h3>
+            <p>Honest ratings from real mentees.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════ LOGIN ════════════════ -->
+<div id="login" class="page">
+    <div class="form-box">
+        <h2>Welcome Back</h2>
+        <p class="form-sub">Log in to continue your journey.</p>
+        <div id="loginMsg" class="msg-box"></div>
+        <input type="email"    id="loginEmail"    placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button onclick="login()">Log In</button>
+        <p class="form-footer">No account? <a onclick="showPage('register')">Register free</a></p>
+    </div>
+</div>
+
+<!-- ════════════════ REGISTER ════════════════ -->
+<div id="register" class="page">
+    <div class="form-box">
+        <h2>Create Account</h2>
+        <p class="form-sub">Join as a mentor or mentee — it's free.</p>
+        <div id="registerMsg" class="msg-box"></div>
+        <input type="text"     id="name"     placeholder="Full Name">
+        <input type="email"    id="email"    placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <select id="role">
+            <option value="mentee">🌱 Mentee — I want a mentor</option>
+            <option value="mentor">🎓 Mentor — I want to teach</option>
+        </select>
+
+        <!-- Extra fields shown only for mentors -->
+        <div id="mentorFields" style="display:none;">
+            <input type="text" id="skills" placeholder="Your skills (e.g. Python, Design, ML)">
+            <textarea id="bio" rows="3" placeholder="Short bio — tell mentees about yourself..."></textarea>
+        </div>
+
+        <button onclick="register()">Create Account</button>
+        <p class="form-footer">Already have an account? <a onclick="showPage('login')">Log in</a></p>
+    </div>
+</div>
+
+<!-- ════════════════ DASHBOARD ════════════════ -->
+<div id="dashboard" class="page">
+    <div id="dashMsg" class="msg-box"></div>
+    <h2 id="welcome"></h2>
+    <p>Role: <span id="userRole"></span></p>
+
+    <h3 style="margin: 24px 0 12px;">Available Mentors</h3>
+    <input type="text" id="search" placeholder="Search by name, skill, or keyword..." onkeyup="searchMentor()">
+
+    <div id="mentorList"></div>
+</div>
+
+<!-- ════════════════ MY SESSIONS ════════════════ -->
+<div id="sessions" class="page">
+    <h2>My Sessions</h2>
+    <p style="color:#888; margin-bottom:20px;">All your booked and past sessions.</p>
+    <div id="sessionMsg" class="msg-box"></div>
+    <div id="sessionList"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
